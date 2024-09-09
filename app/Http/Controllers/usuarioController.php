@@ -49,7 +49,7 @@ class usuarioController extends Controller
     }
 
     public function exportacao() {
-        $arrUsuarios = User::where('status', '=', 'S')->get();
+        $arrUsuarios = User::all();
 
         $csvNomeArquivo = tempnam(sys_get_temp_dir(), 'csv_' . Str::ulid());
         $arquivoAberto = fopen($csvNomeArquivo, 'w');
@@ -72,7 +72,7 @@ class usuarioController extends Controller
                 'bairro' => mb_convert_encoding($user->bairro, 'ISO-8859-1', 'UTF-8'),
                 'endereco' => $user->endereco,
                 'email' => $user->email,
-                'status' => $user->status == 'S' ? 'Sim' : 'Não',
+                'status' => $user->status == 'S' ? 'Ativo' : 'Inativo',
             ];
 
             fputcsv($arquivoAberto, $arrUsers, ';');

@@ -105,23 +105,3 @@ function isValidCPF(strCPF) {
 
     return true;
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Seleciona todos os links com a classe 'btn-desativar'
-    const desativarLinks = document.querySelectorAll('.btn-desativar');
-
-    desativarLinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
-            // Previne a navegação automática para a URL
-            event.preventDefault();
-
-            // Exibe a caixa de confirmação
-            const confirmation = confirm('Tem certeza que deseja desativar este usuário?');
-
-            // Se o usuário confirmar, redireciona para o link
-            if (confirmation) {
-                window.location.href = link.href;
-            }
-        });
-    });
-});

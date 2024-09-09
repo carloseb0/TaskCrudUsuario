@@ -1,6 +1,5 @@
 
 <link href="{{ asset('../css/padrao.css') }}" rel="stylesheet">
-<link href="{{ asset('../css/app.css') }}" rel="stylesheet">
 @vite(['resources/js/app.js'])
 <title>Task</title>
 
