@@ -1,6 +1,7 @@
 
 <link href="{{ asset('../css/padrao.css') }}" rel="stylesheet">
 <link href="{{ asset('../css/app.css') }}" rel="stylesheet">
+@vite(['resources/js/app.js'])
 <title>Task</title>
 
 <div style="padding: 10px">
@@ -27,6 +28,7 @@
                         <th>Telefone</th>
                         <th>Cep</th>
                         <th>E-mail</th>
+                        <th>Status</th>
                         <th width="10%">Ações</th>
                     </tr>
                 </thead>
@@ -41,10 +43,11 @@
                                 <td>{{ $usuario->telefone}}</td>
                                 <td>{{ $usuario->cep}}</td>
                                 <td>{{ $usuario->email}}</td>
+                                <td>{{ $usuario->status == 'S' ? 'Ativo' : 'Inativo'}}</td>
         
                                 <td style="display: flex; justify-content: center; padding: 9px;">
                                     <a href="{{ route('usuario.edit', ['id'=>$usuario->id]) }}"  title='Editar' id="btn-tarefas" class="fa fa-edit" style="margin-right: 10px">Editar</a>
-                                    <a href="#" onclick="return ConfirmaExclusao({{$usuario->id}})" class="fa fa-trash" id="btn-tarefas"title="Remover">Excluir</a>
+                                    <a href="{{ route('usuario.destroy', ['id'=>$usuario->id]) }}" title='Desativar' id="btn-tarefas-{{ $usuario->id }}" class="btn-desativar" style="margin-right: 10px">Desativar</a>
                                 </td>
                             </tr>
                         @endforeach

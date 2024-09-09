@@ -29,23 +29,10 @@ class usuarioController extends Controller
     }
 
     public function destroy($id){
-        // User::find($id)->delete();
-
-        // return redirect()->route('usuario');
-
-        // Busca o usuário pelo ID
         $usuario = User::find($id);
-
-        // Verifica se o usuário existe
-        // if (!$usuario) {
-        //     return redirect()->back()->with('error', 'Usuário não encontrado.');
-        // }
-
-        // Atualiza o status para 'N'
         $usuario->status = 'N';
         $usuario->save();
 
-        // Redireciona com uma mensagem de sucesso
         return redirect()->route('usuario')->with('success', 'Status do usuário atualizado com sucesso.');
     }
 
