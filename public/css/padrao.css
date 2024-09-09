@@ -10858,6 +10858,8 @@ textarea.form-control-lg {
 #btn-principal{
   background: #218f3e;
   color: white;
+  padding: 3px 5px;
+  border-radius: 5px;
 }
 
 #btn-tarefas{
@@ -10927,4 +10929,16 @@ textarea.form-control-lg {
 
 .legend-fieldset {
   border-bottom: 1px solid;
+}
+
+#btn-tarefas:hover {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.btn-desativar:hover {
+  color: #e74c3c;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }

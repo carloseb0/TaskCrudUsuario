@@ -22,6 +22,18 @@
             </ul>
         @endif
 
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <form action="{{ url('usuario/store') }}" method="POST">
             @csrf 
             <div class="card-body">
@@ -116,7 +128,7 @@
                 </div>
             </div>
             <div class="card-footer" style="text-align: right;">
-                <a class="btn" id="btn-principal" href="{{ route('usuario') }}"> Voltar</a>
+                <a class="btn" id="btn-principal" style='margin-right: 10px;' href="{{ route('usuario') }}"> Voltar</a>
                 <button type="submit" class="btn" id="btn-principal">Salvar</button>
             </div>
         </form>

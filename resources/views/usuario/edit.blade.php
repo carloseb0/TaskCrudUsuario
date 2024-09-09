@@ -116,7 +116,7 @@
                 </div>
             </div>
             <div class="card-footer" style="text-align: right;">
-                <a class="btn" id="btn-principal" href="{{ route('usuario') }}"> Voltar</a>
+                <a class="btn" id="btn-principal" href="{{ route('usuario') }}" style='margin-right: 10px;'>Voltar</a>
                 <button type="submit" class="btn" id="btn-principal">Salvar</button>
             </div>
         </form>

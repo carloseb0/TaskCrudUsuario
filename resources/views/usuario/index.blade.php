@@ -3,6 +3,8 @@
 @vite(['resources/js/app.js'])
 <title>Task</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <div style="padding: 10px">
     <div class="card">
         <div class="card-header">
@@ -11,7 +13,7 @@
                     <h2>Usuários</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn" id="btn-principal" href="{{ route('usuario.exportacao') }}"><i class="fa fa-download"></i>&nbsp;Exportar</a>
+                    <a class="btn" id="btn-principal" href="{{ route('usuario.exportacao') }}" style="margin-right: 10px;">Exportar</a>
                     <a class="btn" id="btn-principal" href="{{ route('usuario.create') }}">Novo Registro</a>
                 </div>
             </div>
@@ -28,7 +30,7 @@
                         <th>Cep</th>
                         <th>E-mail</th>
                         <th>Status</th>
-                        <th width="10%">Ações</th>
+                        <th width="5%">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,8 +47,8 @@
                                 <td>{{ $usuario->status == 'S' ? 'Ativo' : 'Inativo'}}</td>
         
                                 <td style="display: flex; justify-content: center; padding: 9px;">
-                                    <a href="{{ route('usuario.edit', ['id'=>$usuario->id]) }}"  title='Editar' id="btn-tarefas" class="fa fa-edit" style="margin-right: 10px">Editar</a>
-                                    <a href="{{ route('usuario.destroy', ['id'=>$usuario->id]) }}" title='Desativar' id="btn-tarefas-{{ $usuario->id }}" class="btn-desativar" style="margin-right: 10px">Desativar</a>
+                                    <a href="{{ route('usuario.edit', ['id'=>$usuario->id]) }}"  title='Editar' id="btn-tarefas" class="fa fa-edit" style="margin-right: 10px"></a>
+                                    <a href="{{ route('usuario.destroy', ['id'=>$usuario->id]) }}" title='Desativar' id="btn-tarefas" class="fa fa-ban" style="margin-right: 10px"></a>
                                 </td>
                             </tr>
                         @endforeach

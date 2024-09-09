@@ -3,9 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('usuario');
 });
-
 Route::group(['prefix'=>'usuario', 'where'=>['id'=>'[0-9]+']], function() {
     Route::get('', ['as'=>'usuario', 'uses'=>"\App\Http\Controllers\usuarioController@index"]);
     Route::get('create', ['as'=>'usuario.create', 'uses'=>"\App\Http\Controllers\usuarioController@create"]);
