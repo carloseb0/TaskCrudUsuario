@@ -15,7 +15,7 @@ Ao informar um CEP, a API Via CEP preenche automaticamente os campos de Endereç
 ```
 Exportação de Dados: 
 ```
-É possível exportar a lista de usuários em formatos como PDF, XLS e CSV.
+É possível exportar a lista de usuários em CSV.
 ```
 
 ## Como rodar o projeto baixado
